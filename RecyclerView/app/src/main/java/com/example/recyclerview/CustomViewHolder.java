@@ -10,16 +10,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class CustomViewHolder extends RecyclerView.ViewHolder {
 
-    public TextView textName, textPrice;
-    public ImageView foodImage;
-    public CardView cardView;
+    public TextView textName123, textPrice123;
+    public ImageView foodImage123;
+    public CardView cardView123;
 
     public CustomViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        textName = itemView.findViewById(R.id.textName);
-        textPrice = itemView.findViewById(R.id.textAge);   // ID trong layout là textAge
-        foodImage = itemView.findViewById(R.id.foodImage);
-        cardView = itemView.findViewById(R.id.main_content);
+        textName123 = itemView.findViewById(R.id.textName);
+        textPrice123 = itemView.findViewById(R.id.textPrice);
+        foodImage123 = itemView.findViewById(R.id.foodImage);
+        cardView123 = itemView.findViewById(R.id.main_content);
     }
 }

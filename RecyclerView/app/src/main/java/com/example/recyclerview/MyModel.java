@@ -1,38 +1,37 @@
 package com.example.recyclerview;
 
 public class MyModel {
-    private String name;   // Tên món ăn
-    private String price;  // Giá món ăn (dạng chuỗi, ví dụ: "40.000đ")
-    private int image;     // ID hình ảnh (R.drawable.xxx)
+    private String name123;
+    private String price123;
+    private int image123;
 
     public MyModel(String name, String price, int image) {
-        this.name = name;
-        this.price = price;
-        this.image = image;
+        this.name123 = name;
+        this.price123 = price;
+        this.image123 = image;
     }
 
-    // Getter & Setter
     public String getName() {
-        return name;
+        return name123;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name123 = name;
     }
 
     public String getPrice() {
-        return price;
+        return price123;
     }
 
     public void setPrice(String price) {
-        this.price = price;
+        this.price123 = price;
     }
 
     public int getImage() {
-        return image;
+        return image123;
     }
 
     public void setImage(int image) {
-        this.image = image;
+        this.image123 = image;
     }
 }

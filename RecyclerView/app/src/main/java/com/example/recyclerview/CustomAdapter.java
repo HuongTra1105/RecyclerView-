@@ -12,38 +12,36 @@ import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomViewHolder> {
 
-    private Context context;
-    private List<MyModel> list;
-    private SelectListener listener;
+    private Context context123;
+    private List<MyModel> foodList123;
+    private SelectListener selectListener123;
 
     public CustomAdapter(Context context, List<MyModel> list, SelectListener listener) {
-        this.context = context;
-        this.list = list;
-        this.listener = listener;
+        this.context123 = context;
+        this.foodList123 = list;
+        this.selectListener123 = listener;
     }
 
     @NonNull
     @Override
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.food_items, parent, false);
-        return new CustomViewHolder(view);
+        View view123 = LayoutInflater.from(context123).inflate(R.layout.food_items, parent, false);
+        return new CustomViewHolder(view123);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
-        MyModel item = list.get(position);
+        MyModel foodItem123 = foodList123.get(position);
 
-        // Gán dữ liệu vào layout
-        holder.textName.setText(item.getName());
-        holder.textPrice.setText(item.getPrice());
-        holder.foodImage.setImageResource(item.getImage());
+        holder.textName123.setText(foodItem123.getName());
+        holder.textPrice123.setText(foodItem123.getPrice());
+        holder.foodImage123.setImageResource(foodItem123.getImage());
 
-        // Xử lý sự kiện click vào card
-        holder.cardView.setOnClickListener(v -> listener.onItemClicked(item));
+        holder.cardView123.setOnClickListener(v -> selectListener123.onItemClicked(foodItem123));
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return foodList123.size();
     }
 }

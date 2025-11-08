@@ -11,46 +11,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements SelectListener {
-
-    RecyclerView recyclerView;
-    List<MyModel> myModelList;
-    CustomAdapter customAdapter;
+    RecyclerView recyclerView123;
+    List<MyModel> myModelList123;
+    CustomAdapter customAdapter123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        displayItems();
+        displayItems123();
     }
 
-    private void displayItems() {
-        recyclerView = findViewById(R.id.recycler_main);
-        recyclerView.setHasFixedSize(true);
+    private void displayItems123() {
+        recyclerView123 = findViewById(R.id.recycler_main);
+        recyclerView123.setHasFixedSize(true);
 
-        // Nếu bạn muốn hiển thị 1 cột (list dọc)
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
+        recyclerView123.setLayoutManager(new GridLayoutManager(this, 1));
 
-        // Nếu muốn dạng lưới 2 cột, thay bằng:
-        // recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        myModelList123 = new ArrayList<>();
 
-        myModelList = new ArrayList<>();
+        myModelList123.add(new MyModel("Phở bò Hà Nội", "40.000đ", R.drawable.phobo));
+        myModelList123.add(new MyModel("Bún chả Hà Nội", "35.000đ", R.drawable.buncha));
+        myModelList123.add(new MyModel("Cơm tấm Sài Gòn", "45.000đ", R.drawable.comtam));
+        myModelList123.add(new MyModel("Mì Quảng", "30.000đ", R.drawable.miquang));
+        myModelList123.add(new MyModel("Bánh mì Việt Nam", "20.000đ", R.drawable.banhmi));
+        myModelList123.add(new MyModel("Gỏi cuốn tôm thịt", "25.000đ", R.drawable.goicuon));
 
-        // 🥘 Thêm danh sách món ăn (ảnh minh họa bạn có thể đổi lại sau)
-        myModelList.add(new MyModel("Phở bò Hà Nội", "40.000đ", R.drawable.phobo));
-        myModelList.add(new MyModel("Bún chả Hà Nội", "35.000đ", R.drawable.buncha));
-        myModelList.add(new MyModel("Cơm tấm Sài Gòn", "45.000đ", R.drawable.comtam));
-        myModelList.add(new MyModel("Mì Quảng", "30.000đ", R.drawable.miquang));
-        myModelList.add(new MyModel("Bánh mì Việt Nam", "20.000đ", R.drawable.banhmi));
-        myModelList.add(new MyModel("Gỏi cuốn tôm thịt", "25.000đ", R.drawable.goicuon));
-
-        // Tạo adapter và gán vào RecyclerView
-        customAdapter = new CustomAdapter(this, myModelList, this);
-        recyclerView.setAdapter(customAdapter);
+        customAdapter123 = new CustomAdapter(this, myModelList123, this);
+        recyclerView123.setAdapter(customAdapter123);
     }
-
     @Override
-    public void onItemClicked(MyModel myModel) {
-        Toast.makeText(this, "Bạn chọn: " + myModel.getName(), Toast.LENGTH_SHORT).show();
+    public void onItemClicked(MyModel myModel123) {
+        Toast.makeText(this, "Bạn chọn: " + myModel123.getName(), Toast.LENGTH_SHORT).show();
     }
 }
