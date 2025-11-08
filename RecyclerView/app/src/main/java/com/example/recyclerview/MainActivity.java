@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
         myModelList123.add(new MyModel("Mì Quảng", "30.000đ", R.drawable.miquang));
         myModelList123.add(new MyModel("Bánh mì Việt Nam", "20.000đ", R.drawable.banhmi));
         myModelList123.add(new MyModel("Gỏi cuốn tôm thịt", "25.000đ", R.drawable.goicuon));
+        myModelList123.add(new MyModel("Bánh canh", "20.000đ", R.drawable.banhcanh));
+        myModelList123.add(new MyModel("Bún bò Huế", "25.000đ", R.drawable.bunbo));
 
         customAdapter123 = new CustomAdapter(this, myModelList123, this);
         recyclerView123.setAdapter(customAdapter123);
